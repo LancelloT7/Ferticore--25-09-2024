@@ -17,15 +17,7 @@ def cadastro(request):
         User.objects.create_user(username=login, password=senha)
         
         return HttpResponse("Usuário cadastrado com sucesso!")
-    return render(request, 'cadastro.html')
-
-
-
-        
-
-from django.contrib.auth import authenticate
-from django.http import HttpResponse
-from django.shortcuts import render
+    
 
 def auth(request):
     if request.method == "GET":
