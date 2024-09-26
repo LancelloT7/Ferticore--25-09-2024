@@ -1,0 +1,18 @@
+<form method="POST" action="{% url 'cadPedidos' %}">
+    {% csrf_token %}
+    
+    <label for="nome_cliente">Nome do Cliente:</label>
+    <input type="text" name="nome_cliente" required>
+
+    <label for="produto">Produto:</label>
+    <select name="produto" required>
+        <option value="">Selecione um produto</option>
+        {% for produto in produtos %}
+            <option value="{{ produto.id }}">{{ produto.nome }}</option>
+        {% empty %}
+            <option value="">Nenhum produto disponível</option>
+        {% endfor %}
+    </select>
+
+    <button type="submit">Cadastrar Pedido</button>
+</form>

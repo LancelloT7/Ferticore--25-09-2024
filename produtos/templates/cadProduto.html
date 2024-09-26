@@ -1,0 +1,6 @@
+<form method="POST" action="{% url 'cadProduto' %}">
+    {% csrf_token %}
+    <label for="nome">Nome do Produto:</label>
+    <input type="text" name="nome" id="nome" required>
+    <button type="submit">Cadastrar</button>
+</form>
